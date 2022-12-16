@@ -37,6 +37,11 @@ def python_text(text="is cool"):
     text = text.replace("_", " ")
     return "Python %s" % text
 
+@app.route('/number/<int:n>', strict_slashes=False)
+def number_n(n):
+    """display n if integer"""
+    return "%i is a number" % n
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0")
